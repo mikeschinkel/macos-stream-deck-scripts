@@ -21,18 +21,24 @@ function quicktime(activate) {
         quicktime.firstDoc = function() {
             return quicktime.app.documents[0]
         }
+        quicktime.play = function() {
+            quicktime.firstDoc().play()
+        }
+        quicktime.stop = function() {
+            quicktime.firstDoc().stop()
+        }
         quicktime.ahead5 = function() {
             const playing = quicktime.isPlaying()
             quicktime.firstDoc().stepForward(fiveSeconds)
             if (playing) {
-                quicktime.firstDoc().play()
+                quicktime.play()
             }
         }
         quicktime.back5 = function() {
             const playing = quicktime.isPlaying()
             quicktime.firstDoc().stepBackward(fiveSeconds)
             if (playing) {
-                quicktime.firstDoc().play()
+                quicktime.play()
             }
         }
         quicktime.isPlaying = function() {
