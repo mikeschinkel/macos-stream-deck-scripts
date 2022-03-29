@@ -12,4 +12,4 @@ cp -R Resources/Utils.scptd ~/Library/Script\ Libraries
 ```
 
 
-**If you are with Elgato**, please [email me](mailto:mike@newclarity.net?subject=From+Elgato+about+Stream+Deck+Scripts) as I have things that would make writing these scripts easier and that should be simple for you to fix.. 
+**If you are with Elgato**, please [email me](mailto:mike@newclarity.net?subject=From%20Elgato%20about%20Stream%20Deck%20Scripts) as I have things that would make writing these scripts easier and that should be simple for you to fix.. 
