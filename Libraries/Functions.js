@@ -27,6 +27,13 @@ function quicktime(activate) {
         quicktime.stop = function() {
             quicktime.firstDoc().stop()
         }
+        quicktime.togglePlaying = function() {
+            if (quicktime.isPlaying()) {
+                quicktime.stop()
+            } else {
+                quicktime.play()
+            }
+        }
         quicktime.ahead5 = function() {
             const playing = quicktime.isPlaying()
             quicktime.firstDoc().stepForward(fiveSeconds)
