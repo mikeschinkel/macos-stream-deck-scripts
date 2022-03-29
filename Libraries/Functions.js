@@ -22,10 +22,21 @@ function quicktime(activate) {
             return quicktime.app.documents[0]
         }
         quicktime.ahead5 = function() {
+            const playing = quicktime.isPlaying()
             quicktime.firstDoc().stepForward(fiveSeconds)
+            if (playing) {
+                quicktime.firstDoc().play()
+            }
         }
         quicktime.back5 = function() {
+            const playing = quicktime.isPlaying()
             quicktime.firstDoc().stepBackward(fiveSeconds)
+            if (playing) {
+                quicktime.firstDoc().play()
+            }
+        }
+        quicktime.isPlaying = function() {
+            return quicktime.firstDoc().playing()
         }
     }
     if ( typeof activate !== 'undefined' && ! quicktime.isFrontMost() ) {
