@@ -3,6 +3,8 @@ function alert(text) {
     curApp.includeStandardAdditions = true
     curApp.displayDialog(text)
 }
+// Cannot use `let` or `const` to define ACTIVATE as it will
+// not be visible when eval()ed by loader, for some reason.
 var ACTIVATE=true
 function quicktime(activate) {
     if ( typeof quicktime.app == 'undefined' ) {
