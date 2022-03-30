@@ -8,7 +8,7 @@ function alert(text) {
 var ACTIVATE=true
 function quicktime(activate) {
     if ( typeof quicktime.app == 'undefined' ) {
-        const fiveSeconds = {by:5*15} // 15 ticks = 1 second
+        const TickPerSecond = 15 // 15 ticks = 1 second
         quicktime.filePath = "/System/Applications/QuickTime Player.app"
         quicktime.app = Application(quicktime.filePath)
         quicktime.includeStandardAdditions = true
@@ -34,16 +34,16 @@ function quicktime(activate) {
                 quicktime.play()
             }
         }
-        quicktime.ahead5 = function() {
+        quicktime.ahead = function(seconds) {
             const playing = quicktime.isPlaying()
-            quicktime.firstDoc().stepForward(fiveSeconds)
+            quicktime.firstDoc().stepForward({by:seconds*TickPerSecond})
             if (playing) {
                 quicktime.play()
             }
         }
-        quicktime.back5 = function() {
+        quicktime.back = function(seconds) {
             const playing = quicktime.isPlaying()
-            quicktime.firstDoc().stepBackward(fiveSeconds)
+            quicktime.firstDoc().stepBackward({by:seconds*TickPerSecond})
             if (playing) {
                 quicktime.play()
             }
